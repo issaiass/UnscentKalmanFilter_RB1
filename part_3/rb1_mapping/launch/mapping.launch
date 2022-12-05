@@ -1,0 +1,14 @@
+<launch>
+
+    <arg name="scan_topic" default="/scan"/>
+    <arg name="rviz_loc" default="$(find rb1_mapping)/rviz/mapping.rviz"/>
+    <!--Launch gmapping-->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+        <rosparam file="$(find rb1_mapping)/params/gmapping_params.yaml" command="load"/>
+    </node>
+    <remap from="scan" to="$(arg scan_topic)"/>
+
+    <!--Launch Rviz-->
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(arg rviz_loc)"/>
+</launch>
+

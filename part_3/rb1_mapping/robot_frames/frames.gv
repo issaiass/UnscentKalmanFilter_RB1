@@ -1,0 +1,25 @@
+digraph G {
+"robot_odom" -> "robot_base_footprint"[label=" Broadcaster: /gazebo\nAverage rate: 47.81\nBuffer length: 4.999\nMost recent transform: 1686.996\nOldest transform: 1681.997\n"];
+"robot_front_cover_link" -> "robot_base_docking_contact_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_front_cover_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_footprint" -> "robot_base_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_front_laser_base_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_front_laser_base_link" -> "robot_front_laser_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_front_rgbd_camera_rgb_base_link" -> "robot_front_rgbd_camera_depth_frame"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_front_rgbd_camera_rgb_base_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_front_rgbd_camera_depth_frame" -> "robot_front_rgbd_camera_depth_optical_frame"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_front_rgbd_camera_rgb_base_link" -> "robot_front_rgbd_camera_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_front_rgbd_camera_rgb_base_link" -> "robot_front_rgbd_camera_rgb_optical_frame"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_imu_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_omni_backwheel_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_omni_front_leftwheel_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_omni_front_rightwheel_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_footprint" -> "robot_top_cover_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"robot_base_link" -> "robot_left_wheel_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 50.201\nBuffer length: 4.98\nMost recent transform: 1686.999\nOldest transform: 1682.019\n"];
+"robot_base_link" -> "robot_right_wheel_link"[label=" Broadcaster: /robot/robot_state_publisher\nAverage rate: 50.201\nBuffer length: 4.98\nMost recent transform: 1686.999\nOldest transform: 1682.019\n"];
+"map" -> "odom"[label=" Broadcaster: /slam_gmapping\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 1687.023\nOldest transform: 1682.073\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1687.026"[ shape=plaintext ] ;
+}->"map";
+}

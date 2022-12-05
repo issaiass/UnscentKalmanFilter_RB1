@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Starts ROS Node that reads in odometry msgs and publishes the same odometry msgs to another topic -->
+<!-- Requires: 'odom' topic available -->
+<!-- Publishes: 'odom_noisy' topic -->
+
+<launch>
+
+  <node pkg="noisy_odom" type="noisy_odom_republisher.py" name="noisy_odom" output="screen"/>
+
+</launch>

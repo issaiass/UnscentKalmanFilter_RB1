@@ -1,0 +1,29 @@
+odom_model_type: diff-corrected
+odom_frame_id: robot_odom
+base_frame_id: robot_base_link
+global_frame_id: map
+
+# odom parameters
+odom_alpha1: 0.005
+odom_alpha2: 0.005
+odom_alpha3: 0.010
+odom_alpha4: 0.005
+odom_alpha5: 0.003
+
+# Fliter Parameters
+min_particles: 300
+max_particles: 3000
+kld_err: 0.01
+update_min_a: 0.5
+resample_interval: 1
+transform_tolerance: 0.1
+gui_publish_rate: -1.0
+
+#Laser Parameters
+laser_min_range: -1.0
+laser_max_range: -1.0
+laser_max_beams: 30
+laser_z_hit: 0.5
+laser_z_short: 0.05
+laser_z_max: 0.05
+laser_z_rand: 0.5

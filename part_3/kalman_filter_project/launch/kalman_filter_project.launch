@@ -1,0 +1,40 @@
+<launch>
+  <!-- Default file arguments -->
+  <arg name="rviz_loc" default="$(find rb1_navigation)/rviz_config/navigation.rviz"/>
+  <arg name="map_file" default="$(find rb1_mapping)/maps/warehouse_map.yaml"/>
+  <!-- Default topic arguments -->
+  <arg name="odom_topic" default="/odom"/>
+  <arg name="laser_topic" default="/scan"/>
+  <arg name="scan_topic" default="/scan"/>  
+  <arg name="vel_topic" default="/robot/cmd_vel"/>
+
+
+  <!-- Launch noisy_odom node -->
+  <include file="$(find noisy_odom)/launch/noisy_odom.launch"></include>
+
+  <!-- Launch map_server node -->
+  <include file="$(find rb1_mapping)/launch/provide_map.launch">
+    <arg name="map_file" value="$(arg map_file)" />  
+  </include>
+
+  <!-- Launch particle filter (AMCL) -->
+  <include file="$(find kalman_filter_project)/launch/amcl.launch">
+    <arg name="scan_topic" value="$(arg scan_topic)"/>
+  </include>
+
+  <!-- Launch Kalman Filter (EKF) -->
+  <include file="$(find kalman_filter_project)/launch/ekf.launch"></include>
+  
+  <!-- Launch move_base -->
+  <include file="$(find kalman_filter_project)/launch/move_base.launch">
+    <arg name="odom_topic" value="$(arg odom_topic)"/>
+    <arg name="laser_topic" value="$(arg laser_topic)"/>    
+    <arg name="vel_topic" value="$(arg vel_topic)"/>        
+  </include>
+
+  <!-- Insert code to launch Rviz here -->
+  <include file="$(find kalman_filter_project)/launch/rviz.launch">
+    <arg name="rviz_loc" value="$(arg rviz_loc)" />
+  </include>
+
+</launch>

@@ -1,0 +1,4 @@
+<launch> 
+    <arg name="rviz_loc" default="$(find rb1_navigation)/rviz_config/navigation.rviz"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(arg rviz_loc)"/> 
+</launch>

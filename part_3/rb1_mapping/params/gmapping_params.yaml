@@ -1,0 +1,16 @@
+base_frame: robot_base_link
+odom_frame: robot_odom
+map_frame: map
+map_update_interval: 3.0
+
+# Laser parameters
+maxUrange: 18
+maxRange: 20.1
+minimumScore: 0.0
+
+# map parameters
+xmin: -100
+ymin: -100
+xmax: 100
+ymax: 100
+delta: 0.05

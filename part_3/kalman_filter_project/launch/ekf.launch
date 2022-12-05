@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="robot_localization" type="ukf_localization_node" name="ukf_localization_node" clear_params="true">
+    <rosparam command="load" file="$(find kalman_filter_project)/config/ukf_localization.yaml"/>
+  </node>
+</launch>

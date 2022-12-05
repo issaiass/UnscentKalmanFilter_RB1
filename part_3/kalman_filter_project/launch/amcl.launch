@@ -1,0 +1,10 @@
+<launch>
+    <arg name="scan_topic" default="scan"/>
+
+    <!--Launch amcl node-->
+    <node pkg="amcl" type="amcl" name="amcl">
+        <rosparam file="$(find rb1_localization)/params/amcl_params.yaml" command="load"/>
+    </node>
+    <remap from="scan" to="$(arg scan_topic)"/>
+
+</launch>
